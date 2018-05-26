@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=980">
+    <title>日大アメフト部加害選手に対する減刑嘆願書作成ツール</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" crossorigin="anonymous">
+    <style type="text/css">
+        canvas {
+            border: solid black 1px;
+        }
+    </style>
+</head>
+<body>
+<div class="ui container">
+    <div class="ui grid">
+        <div class="one column">
+            <div></div>
+            <h1 class="ui dividing blue header">
+                日大アメフト部加害選手に対する減刑嘆願書作成ツール
+            </h1>
+            <form id="form" class="ui segment form">
+                <div class="field">
+                    <label for="address">1. 住所を入力</label>
+                    <textarea class="ui huge input" cols="20" rows="3" id="address"></textarea>
+                </div>
+                <div class="field">
+                    <label>2. 枠内に署名を手書きで記入</label>
+                    <canvas id="signature" width="380" height="180"></canvas>
+                    <button type="button" id="reset" class="ui button">消す</button>
+                </div>
+                <div class="ui divider"></div>
+                <div class="ui center aligned field">
+                    <button id="generate" class="ui primary massive button">生成</button>
+                </div>
+            </form>
+
+            <div class="ui segment" id="outputContainer" style="display: none;">
+                <h2 class="ui dividing header">
+                    下の画像を保存し、奥野氏のメールアドレス <a href="mailto:info@okuno.gr.jp?subject=嘆願書" target="_blank">info@okuno.gr.jp</a> へ画像を添付して送信してください
+                </h2>
+                <p>※パソコンの場合は右クリック、スマホの場合は長押しで保存できます</p>
+                <canvas id="output" width="539" height="960"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui grid">
+        <div class="one column">
+            <h2 class="ui header">このページについて</h2>
+
+            <p>
+                このページは、日本大学と関西学院大学の定期戦で発生した悪質タックル問題について、被害者の父親である奥野氏の下記のツイートに基づき、加害選手に対する減刑の嘆願書を生成するツールです。
+            </p>
+
+            <blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">嘆願書<br>拡散協力お願いします<br>一度写真を保存して、その後添付する際に編集で住所は入力名前は手書きで、ひらがなでもいいです。<br>私に直接メールください。<br>題名か、文章の最初に嘆願書と書いてください。 <a href="https://t.co/Ak1NKtmRuB">pic.twitter.com/Ak1NKtmRuB</a></p>&mdash; 奥野康俊 (@okunoyasutoshi) <a href="https://twitter.com/okunoyasutoshi/status/1000303659358420993?ref_src=twsrc%5Etfw">2018年5月26日</a></blockquote>
+            <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+            <p>
+                上記フォームに入力された内容は、<b>あなたが利用しているパソコンまたはスマートフォンの内部のみで処理されており、インターネット上には一切送信していません。</b>
+            </p>
+            <p>
+                このプログラムのソースコードは<a href="https://github.com/mzsm/okuno-tangansho">GitHubで公開しています。</a>
+            </p>
+            <div class="ui divider"></div>
+            <p>つくった人：mzsm <a href="https://twitter.com/mzsm_j">@mzsm_j</a></p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/2.3.0/fabric.min.js"></script>
+<script src="js/petition.js"></script>
+</body>
+</html>
