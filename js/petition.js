@@ -5,6 +5,13 @@ let output = new fabric.Canvas('output');
 output.selection = false;
 
 // リセット
+document.querySelector('#undo').addEventListener('click', function() {
+    let last = signature.getObjects().pop();
+    if(last){
+        signature.remove(last).renderAll();
+    }
+}, false);
+
 document.querySelector('#reset').addEventListener('click', function() {
     signature.clear();
 }, false);
@@ -31,7 +38,8 @@ document.querySelector('#form').addEventListener('submit', function(e) {
     let signaturePNG = signature.toDataURL('image/png');
     fabric.Image.fromURL(signaturePNG, function (img) {
         img.top = 630;
-        img.left = 120;
+        img.left = 100;
+        img.scale(0.5);
         output.add(img);
     });
 
