@@ -40,11 +40,12 @@ document.querySelector('#form').addEventListener('submit', function(e) {
             img.scale(0.5);
             output.add(img);
 
-            document.querySelector('#save').href = output.toDataURL('image/png');
+            let dataUrl = output.toDataURL('image/png');
+            document.querySelector('#outputImg').src = dataUrl;
+            document.querySelector('#outputContainer').style.display = 'block';
         });
     });
 
-    document.querySelector('#outputContainer').style.display = 'block';
     return false;
 }, false);
 

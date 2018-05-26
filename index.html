@@ -9,6 +9,11 @@
         canvas {
             border: solid black 1px;
         }
+        #outputImg {
+            width: 100%;
+            max-width: 539px;
+            border: solid black 1px;
+        }
     </style>
 </head>
 <body>
@@ -41,10 +46,11 @@
                     下の画像を保存し、奥野氏のメールアドレス <a href="mailto:info@okuno.gr.jp?subject=嘆願書" target="_blank">info@okuno.gr.jp</a> へ画像を添付して送信してください
                 </h2>
                 <div>
-                    <a id="save" class="ui primary massive button" download="tangansho.png"><i class="cloud download icon"></i>保存</a>
+                    ※パソコンの場合は右クリック、スマホの場合は長押しで保存できます
                 </div>
                 <div style="text-align: center">
-                    <canvas id="output" width="539" height="960"></canvas>
+                    <img id="outputImg" alt="">
+                    <canvas id="output" width="539" height="960" style="display: none;"></canvas>
                 </div>
             </div>
         </div>
