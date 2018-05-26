@@ -5,3 +5,5 @@
 Apache License 2.0
 
 [http://www.apache.org/licenses/LICENSE-2.0]
+
+※ただし、嘆願書のテンプレート画像を除く。
